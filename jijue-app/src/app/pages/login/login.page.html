@@ -1,0 +1,40 @@
+<ion-content class="ion-padding ion-text-center login-page">
+  <h1>Welcome back!</h1>
+  <p>Please login to continue.</p>
+  <form class="login-form">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" for="email">Email</ion-label>
+        <ion-input
+          [(ngModel)]="userData.email"
+          name="email"
+          type="email"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" for="password">Password</ion-label>
+        <ion-input
+          [(ngModel)]="userData.password"
+          name="password"
+          type="password"
+          required
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      class="form-btn-submit"
+      expand="block"
+      shape="round"
+      (click)="loginAction()"
+      [disabled]="isRunning"
+      >{{ btnText }}</ion-button
+    >
+
+    <div>
+      Don't have an account? <a [routerLink]="['/register']">Register</a>
+    </div>
+  </form>
+</ion-content>
